@@ -1,16 +1,17 @@
 # silver-cart
 
 ## Para que funcione:
--Añadir a settings context_processor el siguiente elemento:  
+### Añadir a settings context_processor el siguiente elemento:  
     'cart.context_processor.cart_total_amount'  
--Añadir en las variables de settings:  
+### Añadir en las variables de settings:  
     CART_SESSION_ID = 'cart'  
--Cambiar en las views el import from store.models import Product por el import de su propio modelo producto  
--En su producto son obligatorios los campos:  
+### Cambiar en las views por su propio modelo producto el import  
+    from store.models import Product  
+### En su producto son obligatorios los campos:  
     name = models.CharField(max_length=255)  
     image = models.ImageField(upload_to=’products/’)  
     price = models.FloatField()  
--El carrito pone a disposicion las siguientes urls:  
+### El carrito pone a disposicion las siguientes urls:  
     urlpatterns = [  
     path('cart/add/<int:id>/', views.cart_add, name='cart_add'),  
     path('cart/item_clear/<int:id>/', views.item_clear, name='cart_item_clear'),  
