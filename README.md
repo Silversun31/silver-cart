@@ -1,7 +1,7 @@
 # silver-cart
 
 ## Para que funcione:
--Añadir a settings context_processor el siguiente elemento:
+-Añadir a settings context_processor el siguiente elemento:  
     'cart.context_processor.cart_total_amount'
 -Añadir en las variables de settings:
     CART_SESSION_ID = 'cart'
